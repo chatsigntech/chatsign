@@ -116,3 +116,25 @@ jQuery(function($) {
  
 
 });
+
+document.addEventListener('scroll', function () {
+    const navbar = document.getElementById('main-nav');
+    if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+const video = document.getElementById('background-video');
+const muteButton = document.getElementById('mute-btn');
+
+muteButton.addEventListener('click', () => {
+    if (video.muted) {
+        video.muted = false;
+        muteButton.textContent = '🔊'; // Change button icon to unmute
+    } else {
+        video.muted = true;
+        muteButton.textContent = '🔇'; // Change button icon to mute
+    }
+});
